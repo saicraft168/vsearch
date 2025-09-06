@@ -5,7 +5,7 @@ services:
       dockerfile: Dockerfile
     volumes:
       - ./frontend:/app
-      - frontend_node_modules:/app/node_modules  # node_modulesはコンテナ側に保持
+      - /app/node_modules  # node_modulesはコンテナ側に保持
     ports:
       - "5173:5173"
     environment:
@@ -41,6 +41,3 @@ services:
 networks:
   appnet:
     driver: bridge
-
-volumes:
-  frontend_node_modules:
