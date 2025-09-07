@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://${PG_HOST}:${PG_PORT}/${PG_DB}
+    username: ${PG_USER}
+    password: ${PG_PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: none  # 既存DBを壊さない。必要なら validate に変更してね
+    open-in-view: false
+  sql:
+    init:
+      mode: never
+
+server:
+  port: ${SERVER_PORT:8080}
