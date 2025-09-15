@@ -1,0 +1,11 @@
+/* カスタムカラーの追加 */
+$theme-colors: map-merge(
+    (
+        "gray-200": #E9ECEF,
+        "gray-900": #212529
+    ),
+    ()
+);
+
+// Bootstrap本体のSCSSを読み込む
+@import "bootstrap/scss/bootstrap";
