@@ -10,6 +10,9 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap-icons/font/bootstrap-icons.css'
 import 'bootstrap'
 
+/* Bootstrap カスタムSCSS */
+import './assets/bootstrap-custom.scss'
+
 const app = createApp(App)
 
 app.use(createPinia())
