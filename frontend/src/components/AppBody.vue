@@ -1,5 +1,8 @@
 <template>
-    <div class="app-body">
+    <div
+        class="bg-light text-dark"
+        style="height: 100vh"
+        >
         <p>テストコンテンツ</p>
     </div>
 </template>
@@ -8,9 +11,4 @@
 </script>
 
 <style scoped>
-.app-body {
-    color: bg-gray-200;
-    width: auto;
-    height: auto;
-}
 </style>
