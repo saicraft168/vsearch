@@ -8,7 +8,7 @@
     />
 
     <!-- メイン領域 -->
-    <div class="d-flex flex-grow-1">
+    <div class="d-flex">
 
       <!-- サイドバー -->
       <AppSidebar
@@ -17,8 +17,10 @@
       />
 
       <!-- ボディ -->
-      <main class="flex-fill p-3 bg-light">
-        <AppBody />
+      <main class="flex-grow-1">
+        <AppBody 
+          class="p-3"
+        />
       </main>
 
     </div>
@@ -38,6 +40,4 @@ import AppBody from "@/components/AppBody.vue";
   function sideBarShowOrNot() {
     sideBarFlag.value = !sideBarFlag.value
   }
-
-
 </script>
