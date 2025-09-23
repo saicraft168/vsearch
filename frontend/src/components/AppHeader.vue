@@ -21,7 +21,7 @@
                 <RouterLink
                     v-bind:to="{name: 'home'}"
                 >
-                    <button type="button" class="btn btn-secondary btn-sm">
+                    <button type="button" class="btn btn-secondary btn-sm me-1">
                         ログイン
                     </button>
                 </RouterLink>
