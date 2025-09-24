@@ -19,7 +19,7 @@
             <div class="d-flex justify-content-start">
                 <!-- Login btn-->
                 <RouterLink
-                    v-bind:to="{name: 'home'}"
+                    v-bind:to="{name: 'login'}"
                 >
                     <button type="button" class="btn btn-secondary btn-sm me-1">
                         ログイン
