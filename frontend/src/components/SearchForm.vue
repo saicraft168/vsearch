@@ -34,24 +34,12 @@
                 <option></option>
             </select>
         </div>
-        <!-- 配信中 -->
-        <div class="col-3">
-            <label for="activePeriod" class="form-label">配信区分</label>
-            <select
-                class="form-select"
-                id="activePeriod"
-                tabindex="40"
-            >
-                <option selected></option>
-                <option>配信中</option>
-            </select>
-        </div>
         <!-- ボタン -->
         <div class="col-12 d-flex justify-content-end">
             <div class="mt-3 ms-2">
                 <button
                     type="submit"
-                    class="btn btn-primary"
+                    class="btn btn-primary btn-sm"
                     tabindex="100"
                 >
                     検索
@@ -60,7 +48,7 @@
             <div class="mt-3 ms-2">
                 <button
                     type="reset"
-                    class="btn btn-secondary"
+                    class="btn btn-secondary btn-sm"
                     tabindex="110"
                 >
                     クリア
