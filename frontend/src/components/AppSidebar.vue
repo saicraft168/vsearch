@@ -1,7 +1,7 @@
 <template>
     <aside
         v-if="open"
-        class="bg-gray-200 text-dark"
+        class="bg-gray-200 text-dark flex-shrink-0"
         style="width: 270px; height: 100%;"
     >
         <ul class="nav flex-column">
