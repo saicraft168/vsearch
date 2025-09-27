@@ -37,7 +37,5 @@
 </template>
 
 <script setup lang="ts">
-import { RouterLink } from 'vue-router';
-
     defineProps<{ open: boolean }> ()
 </script>

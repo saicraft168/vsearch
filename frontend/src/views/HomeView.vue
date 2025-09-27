@@ -35,7 +35,7 @@ import AppBody from "@/components/AppBody.vue";
 
 
 /* サイドバーの表示/非表示の切り替え処理 */
-  const sideBarFlag = ref(false)
+  const sideBarFlag = ref(true)
 
   function sideBarShowOrNot() {
     sideBarFlag.value = !sideBarFlag.value
