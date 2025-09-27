@@ -18,7 +18,7 @@
             絞込み検索
             <i class="bi bi-search ms-1"></i>
         </button>
-        <div class="collapse" id="collapseExample">
+        <div class="collapse show" id="collapseExample">
             <div class="card card-body mb-3">
                 <SearchForm />
             </div>

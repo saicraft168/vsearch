@@ -20,7 +20,7 @@
                     <div class="w-100 mb-5">
                         <label for="searchInputVName" class="form-label">パスワード</label>
                         <input
-                            type="text"
+                            type="password"
                             class="form-control"
                             id="searchInputVName"
                             tabindex="10"
@@ -50,7 +50,7 @@
                 <div class="column w-75 text-dark text-center">
                     <h5 class="mb-5">はじめてご利用の方</h5>
                     <RouterLink
-                        v-bind:to="{name: 'home'}"
+                        v-bind:to="{name: 'userRegister'}"
                         class="btn btn-dark w-100"
                     >
                         新規会員登録
@@ -62,8 +62,6 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
-
 </script>
 
 <style scoped>
