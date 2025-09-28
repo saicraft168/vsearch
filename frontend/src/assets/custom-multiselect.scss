@@ -1,0 +1,21 @@
+.multiselect {
+    // border: none;
+    // border: #dee2e6;
+    // box-shadow: none;
+    font-size: .875rem;            /* = 14px */
+    line-height: 1.0;              /* 14px × 1.5 = 21px */
+    border-radius: .25rem;         /* = 4px */
+    color: #62757d;
+}
+
+.multiselect__placeholder,
+.multiselect.multiselect--active .multiselect__placeholder {
+    font-size: inherit;
+    color: #6c757d;
+}
+
+.multiselect__single,
+.multiselect__tags {
+    font-size: inherit;
+    color: #212529;
+}
