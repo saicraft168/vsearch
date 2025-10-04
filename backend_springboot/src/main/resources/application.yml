@@ -1,12 +1,28 @@
 spring:
   datasource:
-    url: jdbc:postgresql://${PG_HOST}:${PG_PORT}/${PG_DB}
-    username: ${PG_USER}
-    password: ${PG_PASSWORD}
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/appdb}
+    username: ${DB_USER:appuser}
+    password: ${DB_PASSWORD:secret}
+    hikari:
+      maximum-pool-size: ${DB_POOL_MAX:10}
+      minimum-idle: ${DB_POOL_MIN:2}
+      connection-timeout: 30000       # ms
+      validation-timeout: 5000
+      idle-timeout: 600000
+      max-lifetime: 1800000
   jpa:
-    hibernate:
-      ddl-auto: none  # 既存DBを壊さない。必要なら validate に変更してね
     open-in-view: false
+    hibernate:
+      ddl-auto: validate              # 生成しない。Flywayで作る/変更する
+    show-sql: false                   # SQLはロガーで出す（devで切替）
+    properties:
+      hibernate:
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+    baseline-on-migrate: true         # 既存DBに初回適用する場合
+    baseline-version: 1
+    clean-disabled: true  
   sql:
     init:
       mode: never
