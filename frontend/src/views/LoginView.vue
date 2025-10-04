@@ -27,16 +27,17 @@
                         >
                     </div>
                     <!-- ボタン-ログイン -->
-                    <button
-                        type="submit"
+                    <RouterLink
+                        v-bind:to="{name: 'home'}"
                         class="btn btn-dark w-100 mb-4"
                         tabindex="100"
                     >
                         ログイン
-                    </button>
+                    </RouterLink>
+                    <!-- パスワード忘れた場合 -->
                     <div class="text-center">
                         <RouterLink
-                            v-bind:to="{name: 'home'}"
+                            v-bind:to="{name: 'resetPasswordRequest'}"
                             class="link-dark link-opacity-50-hover"
                         >
                             パスワードをお忘れの方はこちら
