@@ -111,9 +111,67 @@
             </div>
         </div>
     </div>
+  <div class="mt-4">
+    <h1>ユーザー情報一覧</h1>
+
+    <div v-if="loading" class="text-secondary">読み込み中...</div>
+    <div v-else-if="error" class="text-danger">エラー: {{ error }}</div>
+
+    <table v-else class="text-white">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Email</th>
+          <th>更新日時</th>
+          <th>登録日時</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="u in users" :key="u.id">
+          <td class="center">{{ u.id }}</td>
+          <td>{{ u.email }}</td>
+          <td class="center">{{ fmt(u.updatedAt) }}</td>
+          <td class="center">{{ fmt(u.createdAt) }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </template>
 
-<script setup lang="ts">
+<script>
+export default {
+  name: "ProfileCard",
+  data() {
+    return {
+      users: [],
+      loading: true,
+      error: null,
+    };
+  },
+  methods: {
+    fmt(v) {
+      if (v == null || v === "") return "—";
+      const d = new Date(v);
+      return isNaN(d.getTime()) ? "—" : d.toLocaleString();
+    },
+  },
+  async mounted() {
+    try {
+      const res = await this.$axios.get("/api/users/list");
+      const arr = Array.isArray(res.data) ? res.data : [];
+      // snake_case/camelCase の差異を吸収
+      this.users = arr.map((x) => ({
+        ...x,
+        createdAt: x.createdAt ?? x.created_at ?? null,
+        updatedAt: x.updatedAt ?? x.updated_at ?? null,
+      }));
+    } catch (e) {
+      this.error = e?.message || String(e);
+    } finally {
+      this.loading = false;
+    }
+  },
+};
 </script>
 
 <style scoped>
@@ -121,5 +179,24 @@
     width: 100%;
     height: 200px;
     object-fit: cover;
+}
+
+table {
+    width: 90%;
+    border-collapse: collapse;
+    font-size: 12px;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 6px;
+}
+
+table th {
+    background-color: #F2F2F2;
+}
+
+.center {
+    text-align: center;
 }
 </style>
