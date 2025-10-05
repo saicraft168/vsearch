@@ -157,7 +157,7 @@ export default {
   },
   async mounted() {
     try {
-      const res = await this.$axios.get("/api/users/list");
+      const res = await this.$axios.get("/users/list");
       const arr = Array.isArray(res.data) ? res.data : [];
       // snake_case/camelCase の差異を吸収
       this.users = arr.map((x) => ({

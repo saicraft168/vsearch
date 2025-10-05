@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.GetMapping;
  * ユーザー情報 Controller
  */
 @RestController
-@RequestMapping("/api/users")
+@RequestMapping("api/users")
 public class UserController {
     
     /**
