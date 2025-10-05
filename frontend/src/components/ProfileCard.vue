@@ -117,7 +117,7 @@
     <div v-if="loading" class="text-secondary">読み込み中...</div>
     <div v-else-if="error" class="text-danger">エラー: {{ error }}</div>
 
-    <table v-else class="text-white">
+    <table v-else class="text-dark">
       <thead>
         <tr>
           <th>ID</th>
