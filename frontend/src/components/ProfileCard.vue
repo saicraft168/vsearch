@@ -117,7 +117,7 @@
     <div v-if="loading" class="text-secondary">読み込み中...</div>
     <div v-else-if="error" class="text-danger">エラー: {{ error }}</div>
 
-    <table v-else class="text-white">
+    <table v-else class="text-dark">
       <thead>
         <tr>
           <th>ID</th>
@@ -157,7 +157,7 @@ export default {
   },
   async mounted() {
     try {
-      const res = await this.$axios.get("/api/users/list");
+      const res = await this.$axios.get("/users/list");
       const arr = Array.isArray(res.data) ? res.data : [];
       // snake_case/camelCase の差異を吸収
       this.users = arr.map((x) => ({
